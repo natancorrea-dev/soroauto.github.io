@@ -1,3 +1,8 @@
+/* //Cores do projeto:  */
+/* //Orange: #F6981E; */
+/* //Brand blue: #0B2032 */
+/* gray: #EFEFED */
+
 *{
     margin:0;
     padding:0;
@@ -30,13 +35,28 @@ nav{
 
 }
 
-
+/* 
 nav a{
 
     color:white;
     text-decoration:none;
     margin-left:20px;
 
+} */
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    padding:8px 14px;
+    border-radius:20px;
+    transition: all 0.2s ease;
+    display:inline-block;
+}
+
+nav a:hover{
+    background-color:white;
+    color:#111; /* ajuste para a cor do texto ficar legível no fundo branco */
 }
 
 
@@ -60,6 +80,7 @@ nav a{
 .hero p{
 
     max-width:700px;
+    font-size: large;
     margin:20px auto;
 
 }
@@ -67,13 +88,35 @@ nav a{
 
 
 .button{
+    background:#F6981E;
+    padding:12px 25px;
+    border-radius:8px;
+    color:black;
+    text-decoration:none;
+    display:inline-block;
+    position:relative;
+    overflow:hidden;
+    transition: box-shadow 0.3s ease;
+}
 
-background:#38bdf8;
-padding:12px 25px;
-border-radius:8px;
-color:black;
-text-decoration:none;
+.button::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-75%;
+    width:50%;
+    height:100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+    transform: skewX(-25deg);
+    transition: left 0.6s ease;
+}
 
+.button:hover::before{
+    left:125%;
+}
+
+.button:hover{
+    box-shadow: 0 4px 15px rgba(246,152,30,0.5);
 }
 
 
